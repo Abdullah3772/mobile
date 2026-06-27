@@ -14,7 +14,7 @@ function ShopOffers() {
   const [dialog, setDialog] = useState(false);
   const [form, setForm] = useState({
     title: '', description: '', type: 'flash_sale', discount_percentage: '',
-    start_date: '', end_date: '',
+    starts_at: '', ends_at: '',
   });
 
   const fetchOffers = () => {
@@ -71,7 +71,7 @@ function ShopOffers() {
                     <Chip label={`${offer.discount_percentage}% OFF`} color="error" />
                   )}
                   <Typography variant="caption" display="block" sx={{ mt: 1 }}>
-                    {offer.start_date} - {offer.end_date}
+                    {offer.starts_at} - {offer.ends_at}
                   </Typography>
                 </CardContent>
               </Card>
@@ -91,8 +91,8 @@ function ShopOffers() {
             <MenuItem value="clearance_sale">Clearance Sale</MenuItem>
           </TextField>
           <TextField fullWidth label="Discount %" type="number" margin="normal" value={form.discount_percentage} onChange={(e) => setForm({ ...form, discount_percentage: e.target.value })} />
-          <TextField fullWidth label="Start Date" type="date" margin="normal" InputLabelProps={{ shrink: true }} value={form.start_date} onChange={(e) => setForm({ ...form, start_date: e.target.value })} />
-          <TextField fullWidth label="End Date" type="date" margin="normal" InputLabelProps={{ shrink: true }} value={form.end_date} onChange={(e) => setForm({ ...form, end_date: e.target.value })} />
+          <TextField fullWidth label="Start Date" type="date" margin="normal" InputLabelProps={{ shrink: true }} value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} />
+          <TextField fullWidth label="End Date" type="date" margin="normal" InputLabelProps={{ shrink: true }} value={form.ends_at} onChange={(e) => setForm({ ...form, ends_at: e.target.value })} />
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setDialog(false)}>Cancel</Button>

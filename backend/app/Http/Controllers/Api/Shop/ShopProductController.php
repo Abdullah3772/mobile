@@ -130,7 +130,15 @@ class ShopProductController extends Controller
             return response()->json(['error' => 'Unauthorized'], 403);
         }
 
-        $data = $request->except(['images', 'video']);
+        $data = $request->only([
+            'title', 'category_id', 'brand_id', 'description', 'model',
+            'condition', 'storage', 'ram', 'color', 'price', 'discount_price',
+            'warranty', 'warranty_type', 'network_type', 'imei', 'trcsl_approved',
+            'box_available', 'accessories_included', 'stock_quantity',
+            'battery_health', 'scratches', 'face_id_working', 'original_display',
+            'repair_history', 'cash_price', 'card_price', 'emi_available',
+            'camera', 'battery', 'processor', 'screen_size', 'five_g_support',
+        ]);
 
         if ($request->has('title')) {
             $data['slug'] = Str::slug($request->title) . '-' . Str::random(6);

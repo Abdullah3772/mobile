@@ -13,6 +13,10 @@ class ShopReservationController extends Controller
     {
         $shop = auth()->user()->shop;
 
+        if (!$shop || !$shop->isApproved()) {
+            return response()->json(['error' => 'Shop not approved'], 403);
+        }
+
         $query = $shop->reservations()->with(['user', 'product.primaryImage']);
 
         if ($request->has('status')) {
