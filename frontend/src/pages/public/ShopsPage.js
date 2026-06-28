@@ -55,7 +55,7 @@ function ShopsPage() {
         <>
           <Grid container spacing={3}>
             {shops.map((shop) => (
-              <Grid item xs={12} sm={6} md={4} key={shop.id}>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={shop.id}>
                 <Card component={Link} to={`/shops/${shop.slug}`}
                   sx={{ textDecoration: 'none', height: '100%', transition: '0.3s', '&:hover': { transform: 'translateY(-4px)', boxShadow: 6 } }}>
                   <CardContent>

@@ -8,7 +8,7 @@ function Footer() {
     <Box sx={{ bgcolor: '#1a1a2e', color: 'white', mt: 6, pt: 6, pb: 3 }}>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h5" fontWeight={800} gutterBottom>SmartDeals.lk</Typography>
             <Typography variant="body2" color="grey.400" sx={{ mb: 2 }}>
               Sri Lanka's Trusted Verified Mobile Marketplace.
@@ -21,7 +21,7 @@ function Footer() {
               <IconButton size="small" sx={{ color: 'grey.400' }}><YouTube /></IconButton>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>Quick Links</Typography>
             {[
               { label: 'All Products', to: '/products' },
@@ -37,7 +37,7 @@ function Footer() {
               </Typography>
             ))}
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>Categories</Typography>
             {['Smartphones', 'Accessories', 'Tablets', 'Laptops', 'Gaming Devices', 'Spare Parts'].map((cat) => (
               <Typography key={cat} variant="body2" sx={{ mb: 1 }}>
@@ -47,7 +47,7 @@ function Footer() {
               </Typography>
             ))}
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Typography variant="h6" gutterBottom>Contact</Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, color: 'grey.400' }}>
               <Phone fontSize="small" sx={{ mr: 1 }} />

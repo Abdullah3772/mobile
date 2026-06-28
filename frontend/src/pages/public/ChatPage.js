@@ -56,7 +56,7 @@ function ChatPage() {
         </Box>
       ) : (
         <Grid container spacing={2} sx={{ height: 600 }}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Paper sx={{ height: '100%', overflow: 'auto' }}>
               <List>
                 {conversations.map((conv) => (
@@ -80,7 +80,7 @@ function ChatPage() {
               </List>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Paper sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
               {selected ? (
                 <>

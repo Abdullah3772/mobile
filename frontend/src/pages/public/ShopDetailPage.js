@@ -44,13 +44,13 @@ function ShopDetailPage() {
       {/* Cover */}
       <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 5 }}>
         <Container maxWidth="lg">
-          <Grid container spacing={3} alignItems="center">
-            <Grid item>
+          <Grid container spacing={3} sx={{ alignItems: 'center' }}>
+            <Grid>
               <Box sx={{ width: 100, height: 100, borderRadius: '50%', bgcolor: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Store sx={{ fontSize: 48, color: 'primary.main' }} />
               </Box>
             </Grid>
-            <Grid item xs>
+            <Grid size="grow">
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
                 <Typography variant="h4" fontWeight={700}>{shop.name}</Typography>
                 {shop.is_verified && <Verified sx={{ fontSize: 28 }} />}
@@ -67,7 +67,7 @@ function ShopDetailPage() {
                 <Chip label={`${shop.total_products} Products`} size="small" sx={{ bgcolor: 'rgba(255,255,255,0.2)', color: 'white' }} />
               </Box>
             </Grid>
-            <Grid item>
+            <Grid>
               <Button variant={following ? 'outlined' : 'contained'} color={following ? 'inherit' : 'secondary'}
                 onClick={handleFollow} sx={{ color: following ? 'white' : undefined, borderColor: following ? 'white' : undefined }}>
                 {following ? 'Following' : 'Follow Shop'}
@@ -79,7 +79,7 @@ function ShopDetailPage() {
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Paper sx={{ p: 3, mb: 3 }}>
               <Typography variant="h6" fontWeight={600} gutterBottom>Shop Info</Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
@@ -122,7 +122,7 @@ function ShopDetailPage() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Tabs value={tab} onChange={(e, v) => setTab(v)} sx={{ mb: 3 }}>
               <Tab label={`Products (${products.length})`} />
               <Tab label={`Reviews (${reviews.length})`} />
@@ -131,7 +131,7 @@ function ShopDetailPage() {
             {tab === 0 && (
               <Grid container spacing={2}>
                 {products.map((p) => (
-                  <Grid item xs={12} sm={6} md={4} key={p.id}><ProductCard product={p} /></Grid>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={p.id}><ProductCard product={p} /></Grid>
                 ))}
               </Grid>
             )}

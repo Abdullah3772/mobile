@@ -94,11 +94,11 @@ function ProductsPage() {
         {districts.map(d => <MenuItem key={d} value={d}>{d}</MenuItem>)}
       </TextField>
       <Grid container spacing={1} sx={{ mb: 2 }}>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <TextField fullWidth label="Min Price" size="small" type="number"
             value={filters.min_price} onChange={(e) => handleFilterChange('min_price', e.target.value)} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={6}>
           <TextField fullWidth label="Max Price" size="small" type="number"
             value={filters.max_price} onChange={(e) => handleFilterChange('max_price', e.target.value)} />
         </Grid>
@@ -144,11 +144,11 @@ function ProductsPage() {
 
       <Grid container spacing={3}>
         {!isMobile && (
-          <Grid item xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Paper><FilterPanel /></Paper>
           </Grid>
         )}
-        <Grid item xs={12} md={isMobile ? 12 : 9}>
+        <Grid size={{ xs: 12, md: isMobile ? 12 : 9 }}>
           {loading ? (
             <Box sx={{ display: 'flex', justifyContent: 'center', py: 5 }}><CircularProgress /></Box>
           ) : items.length === 0 ? (
@@ -163,7 +163,7 @@ function ProductsPage() {
               </Typography>
               <Grid container spacing={2}>
                 {items.map((product) => (
-                  <Grid item xs={12} sm={6} md={4} key={product.id}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={product.id}>
                     <ProductCard product={product} />
                   </Grid>
                 ))}

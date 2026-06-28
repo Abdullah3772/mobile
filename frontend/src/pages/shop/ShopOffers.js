@@ -58,7 +58,7 @@ function ShopOffers() {
       ) : (
         <Grid container spacing={3}>
           {offers.map((offer) => (
-            <Grid item xs={12} sm={6} md={4} key={offer.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={offer.id}>
               <Card>
                 <CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>

@@ -31,7 +31,7 @@ function WishlistPage() {
       ) : (
         <Grid container spacing={3}>
           {items.map((item) => (
-            <Grid item xs={12} sm={6} md={3} key={item.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item.id}>
               <ProductCard product={item.product} onWishlistToggle={fetchWishlist} />
             </Grid>
           ))}
