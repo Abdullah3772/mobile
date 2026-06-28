@@ -35,8 +35,8 @@ function HomePage() {
         <Box sx={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.05)' }} />
         <Box sx={{ position: 'absolute', bottom: -50, left: -50, width: 200, height: 200, borderRadius: '50%', bgcolor: 'rgba(255,255,255,0.03)' }} />
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={7}>
+          <Grid container spacing={4} sx={{ alignItems: 'center' }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <Chip label="Trusted Marketplace" icon={<Verified />} sx={{ bgcolor: 'rgba(255,255,255,0.15)', color: 'white', mb: 2 }} />
               <Typography variant="h3" fontWeight={800} sx={{ mb: 2, fontSize: { xs: '2rem', md: '3rem' } }}>
                 Sri Lanka's Trusted<br />
@@ -93,7 +93,7 @@ function HomePage() {
             <Typography variant="h5" fontWeight={700} gutterBottom>Browse Categories</Typography>
             <Grid container spacing={2}>
               {data.categories.map((cat) => (
-                <Grid item xs={6} sm={4} md={2} key={cat.id}>
+                <Grid size={{ xs: 6, sm: 4, md: 2 }} key={cat.id}>
                   <Card component={Link} to={`/products?category_id=${cat.id}`}
                     sx={{ textAlign: 'center', textDecoration: 'none', cursor: 'pointer', transition: '0.2s', '&:hover': { transform: 'translateY(-4px)', boxShadow: 4 } }}>
                     <CardContent>
@@ -121,7 +121,7 @@ function HomePage() {
             </Box>
             <Grid container spacing={3}>
               {data.featured_products.map((product) => (
-                <Grid item xs={12} sm={6} md={3} key={product.id}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product.id}>
                   <ProductCard product={product} />
                 </Grid>
               ))}
@@ -141,7 +141,7 @@ function HomePage() {
             </Box>
             <Grid container spacing={3}>
               {data.hot_deals.map((product) => (
-                <Grid item xs={12} sm={6} md={3} key={product.id}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product.id}>
                   <ProductCard product={product} />
                 </Grid>
               ))}
@@ -161,7 +161,7 @@ function HomePage() {
             </Box>
             <Grid container spacing={3}>
               {data.latest_products.map((product) => (
-                <Grid item xs={12} sm={6} md={3} key={product.id}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product.id}>
                   <ProductCard product={product} />
                 </Grid>
               ))}
@@ -181,7 +181,7 @@ function HomePage() {
             </Box>
             <Grid container spacing={3}>
               {data.verified_shops.map((shop) => (
-                <Grid item xs={12} sm={6} md={3} key={shop.id}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }} key={shop.id}>
                   <Card component={Link} to={`/shops/${shop.slug}`} sx={{ textDecoration: 'none', transition: '0.3s', '&:hover': { transform: 'translateY(-4px)', boxShadow: 6 } }}>
                     <CardContent sx={{ textAlign: 'center' }}>
                       <Box sx={{ width: 64, height: 64, borderRadius: '50%', bgcolor: 'primary.light', display: 'flex', alignItems: 'center', justifyContent: 'center', mx: 'auto', mb: 1 }}>
@@ -215,7 +215,7 @@ function HomePage() {
               { icon: <Star sx={{ fontSize: 48 }} />, title: 'Trusted Reviews', desc: 'Real reviews from real customers' },
               { icon: <LocalOffer sx={{ fontSize: 48 }} />, title: 'Best Deals', desc: 'Compare prices across verified shops' },
             ].map((item, i) => (
-              <Grid item xs={12} sm={6} md={3} key={i}>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>
                 <Box sx={{ color: 'primary.main', mb: 1 }}>{item.icon}</Box>
                 <Typography variant="h6" fontWeight={600}>{item.title}</Typography>
                 <Typography variant="body2" color="text.secondary">{item.desc}</Typography>

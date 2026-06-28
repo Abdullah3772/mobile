@@ -92,7 +92,7 @@ function ProductDetailPage() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Grid container spacing={4}>
         {/* Image Gallery */}
-        <Grid item xs={12} md={5}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <Paper sx={{ p: 2 }}>
             <Box sx={{ position: 'relative' }}>
               {discount > 0 && (
@@ -119,7 +119,7 @@ function ProductDetailPage() {
         </Grid>
 
         {/* Product Info */}
-        <Grid item xs={12} md={7}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
             <Chip label={getConditionLabel(product.condition)} color={getConditionColor(product.condition)} />
             {product.trcsl_approved && <Chip icon={<Verified />} label="TRCSL Approved" color="success" variant="outlined" />}
@@ -180,7 +180,7 @@ function ProductDetailPage() {
               <Typography variant="h6" fontWeight={600} gutterBottom>Specifications</Typography>
               <Grid container spacing={2}>
                 {specs.map((spec, i) => (
-                  <Grid item xs={6} sm={4} key={i}>
+                  <Grid size={{ xs: 6, sm: 4 }} key={i}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <Box sx={{ color: 'primary.main' }}>{spec.icon}</Box>
                       <Box>
@@ -199,11 +199,11 @@ function ProductDetailPage() {
             <Paper sx={{ p: 2, mb: 3 }}>
               <Typography variant="h6" fontWeight={600} gutterBottom>Condition Details</Typography>
               <Grid container spacing={2}>
-                {product.battery_health && <Grid item xs={6}><Typography variant="body2">Battery Health: <strong>{product.battery_health}</strong></Typography></Grid>}
-                {product.scratches && <Grid item xs={6}><Typography variant="body2">Scratches: <strong>{product.scratches}</strong></Typography></Grid>}
-                <Grid item xs={6}><Typography variant="body2">Face ID: {product.face_id_working ? <CheckCircle color="success" sx={{ fontSize: 16 }} /> : <Cancel color="error" sx={{ fontSize: 16 }} />}</Typography></Grid>
-                <Grid item xs={6}><Typography variant="body2">Original Display: {product.original_display ? <CheckCircle color="success" sx={{ fontSize: 16 }} /> : <Cancel color="error" sx={{ fontSize: 16 }} />}</Typography></Grid>
-                {product.repair_history && <Grid item xs={12}><Typography variant="body2">Repair History: {product.repair_history}</Typography></Grid>}
+                {product.battery_health && <Grid size={6}><Typography variant="body2">Battery Health: <strong>{product.battery_health}</strong></Typography></Grid>}
+                {product.scratches && <Grid size={6}><Typography variant="body2">Scratches: <strong>{product.scratches}</strong></Typography></Grid>}
+                <Grid size={6}><Typography variant="body2">Face ID: {product.face_id_working ? <CheckCircle color="success" sx={{ fontSize: 16 }} /> : <Cancel color="error" sx={{ fontSize: 16 }} />}</Typography></Grid>
+                <Grid size={6}><Typography variant="body2">Original Display: {product.original_display ? <CheckCircle color="success" sx={{ fontSize: 16 }} /> : <Cancel color="error" sx={{ fontSize: 16 }} />}</Typography></Grid>
+                {product.repair_history && <Grid size={12}><Typography variant="body2">Repair History: {product.repair_history}</Typography></Grid>}
               </Grid>
             </Paper>
           )}
@@ -235,7 +235,7 @@ function ProductDetailPage() {
           <Typography variant="h5" fontWeight={700} gutterBottom>Related Products</Typography>
           <Grid container spacing={3}>
             {related.map((p) => (
-              <Grid item xs={12} sm={6} md={3} key={p.id}><ProductCard product={p} /></Grid>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={p.id}><ProductCard product={p} /></Grid>
             ))}
           </Grid>
         </Box>

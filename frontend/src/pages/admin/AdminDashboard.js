@@ -94,7 +94,7 @@ function AdminDashboardContent() {
       <Typography variant="h4" fontWeight={700} gutterBottom>Admin Dashboard</Typography>
       <Grid container spacing={3}>
         {cards.map((card) => (
-          <Grid item xs={12} sm={6} md={3} key={card.label}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={card.label}>
             <Paper sx={{ p: 3, borderLeft: `4px solid ${card.color}` }}>
               <Typography variant="body2" color="text.secondary">{card.label}</Typography>
               <Typography variant="h4" fontWeight={700} sx={{ color: card.color }}>{card.value || 0}</Typography>

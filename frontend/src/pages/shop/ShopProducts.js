@@ -94,24 +94,24 @@ function ShopProducts() {
         <DialogTitle>Add New Product</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12}><TextField fullWidth label="Title" required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Model" value={form.model} onChange={(e) => setForm({ ...form, model: e.target.value })} /></Grid>
-            <Grid item xs={6}>
+            <Grid size={12}><TextField fullWidth label="Title" required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Model" value={form.model} onChange={(e) => setForm({ ...form, model: e.target.value })} /></Grid>
+            <Grid size={6}>
               <TextField fullWidth label="Condition" select value={form.condition} onChange={(e) => setForm({ ...form, condition: e.target.value })}>
                 <MenuItem value="brand_new">Brand New</MenuItem>
                 <MenuItem value="used">Used</MenuItem>
                 <MenuItem value="refurbished">Refurbished</MenuItem>
               </TextField>
             </Grid>
-            <Grid item xs={6}><TextField fullWidth label="Storage" value={form.storage} onChange={(e) => setForm({ ...form, storage: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="RAM" value={form.ram} onChange={(e) => setForm({ ...form, ram: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Color" value={form.color} onChange={(e) => setForm({ ...form, color: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Price" type="number" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Discount Price" type="number" value={form.discount_price} onChange={(e) => setForm({ ...form, discount_price: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Stock Quantity" type="number" value={form.stock_quantity} onChange={(e) => setForm({ ...form, stock_quantity: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Warranty" value={form.warranty} onChange={(e) => setForm({ ...form, warranty: e.target.value })} /></Grid>
-            <Grid item xs={6}><TextField fullWidth label="Network Type" value={form.network_type} onChange={(e) => setForm({ ...form, network_type: e.target.value })} /></Grid>
-            <Grid item xs={12}><TextField fullWidth label="Description" multiline rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Storage" value={form.storage} onChange={(e) => setForm({ ...form, storage: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="RAM" value={form.ram} onChange={(e) => setForm({ ...form, ram: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Color" value={form.color} onChange={(e) => setForm({ ...form, color: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Price" type="number" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Discount Price" type="number" value={form.discount_price} onChange={(e) => setForm({ ...form, discount_price: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Stock Quantity" type="number" value={form.stock_quantity} onChange={(e) => setForm({ ...form, stock_quantity: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Warranty" value={form.warranty} onChange={(e) => setForm({ ...form, warranty: e.target.value })} /></Grid>
+            <Grid size={6}><TextField fullWidth label="Network Type" value={form.network_type} onChange={(e) => setForm({ ...form, network_type: e.target.value })} /></Grid>
+            <Grid size={12}><TextField fullWidth label="Description" multiline rows={3} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} /></Grid>
           </Grid>
         </DialogContent>
         <DialogActions>
