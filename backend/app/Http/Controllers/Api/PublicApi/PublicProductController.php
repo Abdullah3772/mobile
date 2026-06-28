@@ -64,7 +64,7 @@ class PublicProductController extends Controller
         }
 
         $sortBy = $request->get('sort_by', 'created_at');
-        $sortDir = $request->get('sort_dir', 'desc');
+        $sortDir = in_array($request->get('sort_dir'), ['asc', 'desc']) ? $request->get('sort_dir') : 'desc';
         $allowedSorts = ['price', 'created_at', 'views_count', 'favorites_count'];
         if (in_array($sortBy, $allowedSorts)) {
             $query->orderBy($sortBy, $sortDir);

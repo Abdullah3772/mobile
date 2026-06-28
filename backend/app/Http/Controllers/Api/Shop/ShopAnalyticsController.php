@@ -12,6 +12,10 @@ class ShopAnalyticsController extends Controller
     {
         $shop = auth()->user()->shop;
 
+        if (!$shop || !$shop->isApproved()) {
+            return response()->json(['error' => 'Shop not approved'], 403);
+        }
+
         $totalViews = $shop->products()->sum('views_count');
         $totalFavorites = $shop->products()->sum('favorites_count');
         $totalReservations = $shop->reservations()->count();

@@ -47,7 +47,7 @@ class HomeController extends Controller
         $hotDeals = Product::with(['shop', 'primaryImage', 'brand'])
             ->where('status', 'active')
             ->whereNotNull('discount_price')
-            ->orderByRaw('((price - discount_price) / price) DESC')
+            ->orderByRaw('((price - discount_price) / NULLIF(price, 0)) DESC')
             ->limit(8)
             ->get();
 

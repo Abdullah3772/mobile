@@ -12,6 +12,9 @@ class ShopOfferController extends Controller
     public function index()
     {
         $shop = auth()->user()->shop;
+        if (!$shop || !$shop->isApproved()) {
+            return response()->json(['error' => 'Shop not approved'], 403);
+        }
         $offers = $shop->offers()->with('products.primaryImage')->orderBy('created_at', 'desc')->paginate(15);
         return response()->json($offers);
     }
@@ -61,7 +64,10 @@ class ShopOfferController extends Controller
             return response()->json(['error' => 'Unauthorized'], 403);
         }
 
-        $data = $request->except(['banner_image', 'product_ids']);
+        $data = $request->only([
+            'title', 'description', 'type', 'discount_percentage',
+            'discount_amount', 'starts_at', 'ends_at',
+        ]);
 
         if ($request->hasFile('banner_image')) {
             $data['banner_image'] = $request->file('banner_image')->store('offers', 'public');

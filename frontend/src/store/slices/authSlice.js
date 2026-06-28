@@ -45,6 +45,7 @@ const authSlice = createSlice({
   },
   reducers: {
     logout: (state) => {
+      authAPI.logout().catch(() => {});
       state.user = null;
       state.token = null;
       localStorage.removeItem('token');

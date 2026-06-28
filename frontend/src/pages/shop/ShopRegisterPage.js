@@ -13,9 +13,9 @@ function ShopRegisterPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [form, setForm] = useState({
-    name: '', owner_name: '', nic: '', business_registration: '',
+    name: '', owner_name: '', nic: '', business_registration_number: '',
     address: '', district: '', phone: '', whatsapp: '', email: '', about: '',
-    google_map: '',
+    google_map_lat: '', google_map_lng: '',
   });
 
   const handleSubmit = async (e) => {
@@ -49,7 +49,7 @@ function ShopRegisterPage() {
             <Grid item xs={12}><TextField fullWidth label="Shop Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></Grid>
             <Grid item xs={12} sm={6}><TextField fullWidth label="Owner Name" required value={form.owner_name} onChange={(e) => setForm({ ...form, owner_name: e.target.value })} /></Grid>
             <Grid item xs={12} sm={6}><TextField fullWidth label="NIC Number" required value={form.nic} onChange={(e) => setForm({ ...form, nic: e.target.value })} /></Grid>
-            <Grid item xs={12} sm={6}><TextField fullWidth label="Business Registration Number" value={form.business_registration} onChange={(e) => setForm({ ...form, business_registration: e.target.value })} /></Grid>
+            <Grid item xs={12} sm={6}><TextField fullWidth label="Business Registration Number" value={form.business_registration_number} onChange={(e) => setForm({ ...form, business_registration_number: e.target.value })} /></Grid>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth label="District" required select value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })}>
                 {districts.map(d => <MenuItem key={d} value={d}>{d}</MenuItem>)}
@@ -59,7 +59,8 @@ function ShopRegisterPage() {
             <Grid item xs={12} sm={6}><TextField fullWidth label="Phone" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} /></Grid>
             <Grid item xs={12} sm={6}><TextField fullWidth label="WhatsApp" value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} /></Grid>
             <Grid item xs={12} sm={6}><TextField fullWidth label="Email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></Grid>
-            <Grid item xs={12} sm={6}><TextField fullWidth label="Google Maps Link" value={form.google_map} onChange={(e) => setForm({ ...form, google_map: e.target.value })} /></Grid>
+            <Grid item xs={12} sm={6}><TextField fullWidth label="Latitude" value={form.google_map_lat} onChange={(e) => setForm({ ...form, google_map_lat: e.target.value })} /></Grid>
+            <Grid item xs={12} sm={6}><TextField fullWidth label="Longitude" value={form.google_map_lng} onChange={(e) => setForm({ ...form, google_map_lng: e.target.value })} /></Grid>
             <Grid item xs={12}><TextField fullWidth label="About Your Shop" multiline rows={3} value={form.about} onChange={(e) => setForm({ ...form, about: e.target.value })} /></Grid>
           </Grid>
 

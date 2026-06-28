@@ -18,6 +18,9 @@ class ShopAdvertisementController extends Controller
     public function myAds()
     {
         $shop = auth()->user()->shop;
+        if (!$shop || !$shop->isApproved()) {
+            return response()->json(['error' => 'Shop not approved'], 403);
+        }
         $ads = $shop->advertisements()->with('adPackage')->orderBy('created_at', 'desc')->paginate(15);
         return response()->json($ads);
     }
